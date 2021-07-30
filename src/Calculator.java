@@ -1,6 +1,7 @@
 package accessmodifiers;
 
-//public access modifier class created in this package  has been accessed in another package.
+//public access modifier class created in this package  has been accessed in the class of another package.
+
 
 public class Calculator {
 	

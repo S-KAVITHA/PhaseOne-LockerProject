@@ -5,8 +5,10 @@ import java.util.Scanner;
 // to access public Calculator in access modifier package. import the class.
 import accessmodifiers.Calculator;
 
-public class calcdemo {
-	public static void main(String[] args) {
+public class calcdemo 
+{
+	public static void main(String[] args) 
+	{
 	
 		Scanner input = new Scanner(System.in);
 		System.out.println("---------------------------------------");

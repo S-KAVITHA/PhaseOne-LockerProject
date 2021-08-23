@@ -18,13 +18,15 @@ import java.util.Iterator;
 
 public class DigitalLockerMain {
 
+	// main method to display welcome screen and call next menu for file
+	// operrations.
+
 	private static Scanner myobj;
 	@SuppressWarnings("unused")
 	private static String fileSeparator1 = System.getProperty("file.separator");
 
 	public static void main(String[] args) {
 
-		// String path = System.getProperty("user.dir");
 		initapplicatin();
 		welcomeScreen();
 		displaymain();
@@ -38,15 +40,15 @@ public class DigitalLockerMain {
 	public static void welcomeScreen() {
 		// step 1. collect input from user console
 		String userName = "Kavitha S";
-		System.out.println("::********************************************::");
-		System.out.println("\n       Welcome to LockMe.com ");
-		System.out.println("\n::********************************************::");
+		System.out.println("::**************************************************::");
+		System.out.println("            Welcome to LockMe.com ");
+		System.out.println("\n::**************************************************::");
 		System.out.println("         Your Personal Digital Locker   ");
-		System.out.println("            Developed by " + userName);
-		System.out.println("\n************************************************");
+		System.out.println(" \n           Developed by " + userName);
+		System.out.println("\n****************************************************");
 
-		System.out.println("\nYou can use this application to ,  ");
-		System.out.println("\n1 -> Registration. ");
+		System.out.println("\nYou can use this application to store your credentials.  ");
+		System.out.println("\n1 -> Registration");
 		System.out.println("2 -> Login ");
 		System.out.println("3 -> Exit the application");
 
@@ -76,7 +78,7 @@ public class DigitalLockerMain {
 
 				case 3:
 
-					System.out.println("Terminated");
+					System.out.println("Thankyou for using LockMe.com");
 					loopagain = false;
 					input1.close();
 					System.exit(0);
@@ -84,65 +86,56 @@ public class DigitalLockerMain {
 
 				default:
 					System.out.println("Please enter a valid input");
-					break;
+					continue;
 				}
 			} catch (Exception e) {
 				System.out.println("Please enter a valid input");
+				continue;
 			}
 
 		} while (loopagain);
 
 	}
 
+	// method to register user and create file with user credentials.
+
 	public static void adminfileCreation() {
 
-		System.out.println("--------------------------------------------");
-		System.out.println("Add new file with user details:  ");
-		System.out.println("--------------------------------------------");
+		System.out.println("==========================================");
+		System.out.println("*   Welcome to Registration Screen	 *");
+		System.out.println("==========================================");
 
-		System.out.println("Enter an user name : ");
+		System.out.println("Enter the user name : ");
 		String userName = myobj.nextLine();
 
-		System.out.println("Enter an password : ");
+		System.out.println("Enter the password : ");
 		String password = myobj.nextLine();
 
-		System.out.println("Enter an email ID : ");
+		System.out.println("Enter the email ID : ");
 		String emailID = myobj.nextLine();
 
 		Users userdetails = new Users(userName, password, emailID);
 
-		// Users userdetails = new Users("w", "w", "w", "w");
-
-		File createFolder = new File("main");
-
-		// If file doesn't exist, create the main folder
-		if (!createFolder.exists()) {
-			createFolder.mkdirs();
-		}
-
 		UserCollection.AddNewUser(userdetails);
-
-		// writeAdminfile(userdetails);
-		// }
 
 	}
 
+	// method to check login information and take to the file operations screen.
+
 	private static void checkloginInfo() {
-		
-		
+
 		System.out.println("==========================================");
-		System.out.println("*					*");
-		System.out.println("*   WELCOME TO LOGIN PAGE	 *");
-		System.out.println("*					*");
+		System.out.println("*     Welcome to Login Page	      *");
 		System.out.println("==========================================");
 		System.out.println("Enter Username :");
-		String inpUsername = myobj.next();
-		System.out.println("Enter Password :");
-		String inpPassword = myobj.next();
-		System.out.println("****Reading File****");
 
-	     // Lastly reading File
-	     UserCollection.readFile(inpUsername,inpPassword);
+		String inpUsername = myobj.nextLine();
+		System.out.println("Enter Password :");
+
+		String inpPassword = myobj.nextLine();
+
+		// Lastly reading File1
+		UserCollection.readFile(inpUsername, inpPassword);
 
 	}
 

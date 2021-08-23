@@ -3,9 +3,7 @@ package PhaseOneProject;
 import java.io.*;
 
 class Users implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	// Private class variables
 
@@ -13,18 +11,12 @@ class Users implements Serializable {
 	private String password;
 	private String emailID;
 
-	// Class Constructor
-	/*
-	 * Users(String name, String pwd) { password = pwd; username = name; }
-	 */
-	
 	public Users(String username, String password, String emailID) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.emailID = emailID;
 	}
-
 
 	public String getEmailID() {
 		return emailID;
@@ -50,7 +42,4 @@ class Users implements Serializable {
 		this.password = password;
 	}
 
-	// Getter methods of class variables
-	// public String getCustomerName() { return username; }
-	// public String getAccountNumber() { return password; }
 }
